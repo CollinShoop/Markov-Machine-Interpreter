@@ -1,0 +1,4 @@
+DoubleAs
+:replaceA a bb :replaceA :replaceB
+:replaceB b a :replaceB :end
+:end ~ ~ :end :end
