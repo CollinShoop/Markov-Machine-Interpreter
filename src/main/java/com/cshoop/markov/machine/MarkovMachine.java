@@ -1,4 +1,8 @@
-package markov;
+package com.cshoop.markov.machine;
+
+import com.cshoop.markov.model.MarkovRule;
+import com.cshoop.markov.model.Result;
+import lombok.Data;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,6 +12,7 @@ import java.util.Map;
  * 
  * @author Collin
  */
+@Data
 public class MarkovMachine {
 
 	public static final String SPLIT_STRING = "[ \t]";
@@ -16,21 +21,6 @@ public class MarkovMachine {
 	private String initialStateId = null;
 	private Map<String, MarkovRule> states = new HashMap<>();
 	private String name = null;
-
-	/**
-	 * Applies this Markov machine to all of the given input strings
-	 * 
-	 * @param inputList list of input strings
-	 * @param debug whether or not to debug
-	 * @return the resulting string is returned.
-	 */
-	public String[] process(String[] inputList, boolean debug) {
-		String[] output = new String[inputList.length];
-		for (int i = 0; i < inputList.length; i++) {
-			output[i] = process(inputList[i], debug);
-		}
-		return output;
-	}
 
 	/**
 	 * Applies this Markov machine to the given input until there are no
@@ -80,39 +70,12 @@ public class MarkovMachine {
 		states.put(state.getId(), state);
 	}
 
+
 	/**
 	 * @return the number of states in this machine
 	 */
 	public int size() {
 		return states.size();
-	}
-
-	/**
-	 * @return the initialStateId
-	 */
-	public String getInitialStateId() {
-		return initialStateId;
-	}
-
-	/**
-	 * @param initialStateId the initialStateId to set
-	 */
-	public void setInitialStateId(String initialStateId) {
-		this.initialStateId = initialStateId;
-	}
-
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
 	}
 
 }
