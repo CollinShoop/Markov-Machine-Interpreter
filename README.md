@@ -1,4 +1,4 @@
-# MarkovInterpreter
+# Markov Machine interpreter
 
 Small fun project inspired by [Markov Algorithm](https://en.wikipedia.org/wiki/Markov_algorithm) that I learned about in college.
 
